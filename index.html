@@ -3,38 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خريطة التحقق</title>
+    <title>خريطة المثقفين العرب التفاعلية</title>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-
-    <style>
-        body { margin: 0; padding: 0; }
-        #map { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; }
-    </style>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
     <div id="map"></div>
 
+    <div id="sidebar">
+        <button id="close-sidebar">إغلاق &times;</button>
+        <div id="profile-content">
+            </div>
+    </div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM Content Loaded. Initializing map...'); // للتحقق من تشغيل الكود
-
-            // محاولة تهيئة الخريطة
-            const map = L.map('map').setView([27.0, 45.0], 4); 
-
-            // إضافة طبقة الخريطة
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            }).addTo(map);
-
-            // إضافة رسالة تحذيرية بسيطة (Popup) للتحقق
-            L.marker([30.0, 31.0]).addTo(map)
-                .bindPopup("الخريطة تعمل بنجاح!").openPopup();
-        });
-    </script>
+    <script src="map.js"></script>
 </body>
 </html>
